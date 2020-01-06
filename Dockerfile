@@ -20,5 +20,6 @@ RUN cargo install --target x86_64-unknown-linux-gnu --path .
 FROM debian:stretch-slim
 COPY --from=build /usr/local/cargo/bin/hello_cargo .
 USER 1000
+EXPOSE 8080
 CMD ["./hello_cargo"]
 
